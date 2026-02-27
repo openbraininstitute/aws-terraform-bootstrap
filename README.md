@@ -19,7 +19,7 @@ To setup such a temporary user:
   and show the access key ID and secret of that IAM user
 
 ```
-cd temp-user-for-s3-and-dynamodb 
+cd temp-user-for-s3-and-dynamodb
 export AWS_ACCESS_KEY_ID=...
 export AWS_SECRET_ACCESS_KEY=...
 terraform init
@@ -60,4 +60,4 @@ terraform destroy
 # Funding and Acknowledgement
 
 Copyright (c) 2025 Open Brain Institute
- 
+
