@@ -11,15 +11,15 @@ resource "aws_iam_user" "create_terraform_setup" {
 # Inline isn't always recommended, but this way it gets deleted
 # automatically when you delete the user.
 resource "aws_iam_user_policy" "create_terraform_setup_inline_policy" {
-  name   = "TerraformStateSetupPolicy"
-  user   = aws_iam_user.create_terraform_setup.name
+  name = "TerraformStateSetupPolicy"
+  user = aws_iam_user.create_terraform_setup.name
 
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
       {
-        Effect   = "Allow"
-        Action   = [
+        Effect = "Allow"
+        Action = [
           "s3:Create*",
           "s3:Put*",
           "s3:ListBucket",
@@ -29,8 +29,8 @@ resource "aws_iam_user_policy" "create_terraform_setup_inline_policy" {
         Resource = "arn:aws:s3:::obi-tfstate-*"
       },
       {
-        Effect   = "Allow"
-        Action   = [
+        Effect = "Allow"
+        Action = [
           "s3:PutObject",
           "s3:GetObject",
           "s3:DeleteObject",
@@ -40,8 +40,8 @@ resource "aws_iam_user_policy" "create_terraform_setup_inline_policy" {
         Resource = "arn:aws:s3:::obi-tfstate-*/*"
       },
       {
-        Effect   = "Allow"
-        Action   = [
+        Effect = "Allow"
+        Action = [
           "dynamodb:CreateTable",
           "dynamodb:DeleteTable",
           "dynamodb:PutItem",
